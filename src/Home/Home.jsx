@@ -1,15 +1,11 @@
-import { Outlet } from "react-router-dom";
-import Navbar from "../Components/Navbar/Navbar";
-import Footer from "../Components/Footer/Footer";
+import AboutMe from "../Components/AboutMe/AboutMe";
+import Banner from "../Components/Banner/Banner";
 
 const Home = () => {
   return (
-    <div className="bg-[#ECF0F3]">
-      <Navbar />
-      <div className="min-h-screen">
-        <Outlet></Outlet>
-      </div>
-      <Footer />
+    <div className="w-full mx-auto lg:w-[90%] md:w-[90%]">
+      <Banner />
+      <AboutMe />
     </div>
   );
 };

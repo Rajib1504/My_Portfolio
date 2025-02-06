@@ -89,7 +89,9 @@ const Nav = () => {
                   >
                     <div className="flex justify-center gap-3 items-center">
                       <GoDownload />
-                      <span className="text-primary">Resume</span>
+                      <span className="text-primary tracking-wider">
+                        Resume
+                      </span>
                     </div>
                   </a>
                 </Button>
@@ -119,7 +121,7 @@ const Nav = () => {
               >
                 <div className="flex justify-center gap-3 items-center">
                   <GoDownload />
-                  <span className="text-primary">Resume</span>
+                  <span className="text-primary tracking-wider">Resume</span>
                 </div>
               </a>
             </div>

@@ -7,7 +7,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 
 const Banner = () => {
   return (
-    <div className="grid grid-cols-1  gap-6 lg:gap-4  lg:grid-cols-2 items-center w-[90%] mx-auto py-10">
+    <div className="grid grid-cols-1  gap-6 lg:gap-4  lg:grid-cols-2 items-center  mx-auto py-10">
       {/* Text Container */}
       <div className="space-y-6 order-1">
         <p className="text-sm lg:text-base uppercase text-gray-500 tracking-widest">
@@ -42,10 +42,14 @@ const Banner = () => {
           technologies, making me a budding Junior Full Stack Developer...
         </p>
         {/* button  */}
-        <button className="border border-[#FF014F] flex gap-3 rounded-lg py-2 px-3">
+        <a
+          href="https://drive.google.com/file/d/18RD2vhh9kqUcuAHPAM8o8BNpGYWBoADd/view?usp=sharing"
+          target="_blank"
+          className="border border-[#FF014F] flex gap-3 rounded-lg py-2 max-w-fit px-3"
+        >
           <span className="font-bold">Resume</span>
           <GoDownload className="text-2xl"></GoDownload>
-        </button>
+        </a>
         {/* connect section  */}
         <div className="lg:mt-32 md:mt-20 mt-16 flex justify-between items-center flex-wrap">
           {/* 1st container  */}
