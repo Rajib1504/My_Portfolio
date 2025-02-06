@@ -6,6 +6,9 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
+import { GoDownload } from "react-icons/go";
+import { RxCross1 } from "react-icons/rx";
+import { TiThMenu } from "react-icons/ti";
 
 const Nav = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -26,7 +29,7 @@ const Nav = () => {
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
-          Pages
+          About Me
         </a>
       </Typography>
       <Typography
@@ -36,7 +39,7 @@ const Nav = () => {
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
-          Account
+          Skills
         </a>
       </Typography>
       <Typography
@@ -46,7 +49,7 @@ const Nav = () => {
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
-          Blocks
+          Projects
         </a>
       </Typography>
       <Typography
@@ -56,21 +59,21 @@ const Nav = () => {
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
-          Docs
+          Contacts
         </a>
       </Typography>
     </ul>
   );
   return (
-    <div>
+    <div className="">
       <div>
-        <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
+        <Navbar className="sticky top-0 z-10 h-max max-w-full bg-[#ECF0F3] rounded-none px-4 py-2 lg:px-8 lg:py-4">
           <div className="flex items-center justify-between text-blue-gray-900">
             <Typography
               as="h2"
-              className="mr-4 text-2xl cursor-pointer py-1.5 text-black font-medium"
+              className="mr-4 text-2xl cursor-pointer py-1.5 text-black font-bold"
             >
-              Material Tailwind
+              Rajib.s
             </Typography>
             <div className="flex items-center gap-4">
               <div className="mr-4 hidden lg:block">{navList}</div>
@@ -80,7 +83,9 @@ const Nav = () => {
                   size="sm"
                   className="hidden lg:inline-block"
                 >
-                  <span>Download Reasume</span>
+                  <span className="flex justify-center gap-3 text-[#FF014F] items-center">
+                    <span className="text-primary">Resume</span> <GoDownload />
+                  </span>
                 </Button>
               </div>
               <IconButton
@@ -90,34 +95,9 @@ const Nav = () => {
                 onClick={() => setOpenNav(!openNav)}
               >
                 {openNav ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    className="h-6 w-6"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
+                  <RxCross1 className="text-black text-xl" />
                 ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
+                  <TiThMenu className="text-black text-xl" />
                 )}
               </IconButton>
             </div>
@@ -125,11 +105,10 @@ const Nav = () => {
           <MobileNav open={openNav}>
             {navList}
             <div className="flex items-center gap-x-1">
-              <Button fullWidth variant="text" size="sm" className="">
-                <span>Log In</span>
-              </Button>
               <Button fullWidth variant="gradient" size="sm" className="">
-                <span>Sign in</span>
+                <span className="flex justify-center gap-3 text-[#FF014F] items-center">
+                  <span className="text-primary">Resume</span> <GoDownload />
+                </span>
               </Button>
             </div>
           </MobileNav>
