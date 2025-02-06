@@ -87,7 +87,10 @@ const Nav = () => {
                     target="_blank"
                     className="flex justify-center gap-3 text-[#FF014F] items-center"
                   >
-                    <span className="text-primary">Resume</span> <GoDownload />
+                    <div className="flex justify-center gap-3 items-center">
+                      <GoDownload />
+                      <span className="text-primary">Resume</span>
+                    </div>
                   </a>
                 </Button>
               </div>
