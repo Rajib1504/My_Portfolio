@@ -1,5 +1,6 @@
 import { FaReact } from "react-icons/fa";
 import { FiFacebook, FiGithub } from "react-icons/fi";
+import { GoDownload } from "react-icons/go";
 import { IoLogoJavascript } from "react-icons/io";
 import { LuLinkedin } from "react-icons/lu";
 import { RiTailwindCssFill } from "react-icons/ri";
@@ -40,6 +41,11 @@ const Banner = () => {
           frontend development, I am also expanding my expertise to backend
           technologies, making me a budding Junior Full Stack Developer...
         </p>
+        {/* button  */}
+        <button className="border border-[#FF014F] flex gap-3 rounded-lg py-2 px-3">
+          <span className="font-bold">Resume</span>
+          <GoDownload className="text-2xl"></GoDownload>
+        </button>
         {/* connect section  */}
         <div className="lg:mt-32 md:mt-20 mt-16 flex justify-between items-center flex-wrap">
           {/* 1st container  */}
