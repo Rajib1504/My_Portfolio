@@ -17,7 +17,7 @@ const ContactSection = () => {
     const message = form.message.value;
     const details = { email, name, message };
     await axios.post(
-      "my-portfolio-server-ayhwumbbl-rajib1081s-projects.vercel.app/sendMails",
+      "https://my-portfolio-server-five-iota.vercel.app/sendMails",
       details
     );
   };

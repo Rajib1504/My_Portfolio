@@ -1,15 +1,17 @@
 import { Button } from "@material-tailwind/react";
+import axios from "axios";
 import { useEffect, useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
   const [products, setProducts] = useState([]);
+  console.log(products);
   const navigate = useNavigate();
-  //   console.log(products);
   useEffect(() => {
-    fetch("my-portfolio-server-ayhwumbbl-rajib1081s-projects.vercel.app/data")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
+    axios
+      .get("https://my-portfolio-server-five-iota.vercel.app/data")
+      .then((res) => setProducts(res.data));
   }, []);
   const handleSubmit = (id) => {
     //     console.log(id);
@@ -27,7 +29,7 @@ const Projects = () => {
       </p>
       <div className=" grid grid-cols-1 lg:grid-cols-3 gap-4 p-2 rounded-lg my-4 w-full">
         {/* project -1  */}
-        {products.map((product) => (
+        {products?.map((product) => (
           <div
             key={product._id}
             className="flex flex-col gap-2 rounded-lg shadow-2xl bg-gray-200 "

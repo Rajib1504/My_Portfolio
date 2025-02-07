@@ -8,7 +8,7 @@ const Details = () => {
   //   console.log(params);
   useEffect(() => {
     fetch(
-      `my-portfolio-server-ayhwumbbl-rajib1081s-projects.vercel.app/details/${params.id}`
+      `https://my-portfolio-server-five-iota.vercel.app/details/${params.id}`
     )
       .then((res) => res.json())
       .then((data) => setProject(data));
