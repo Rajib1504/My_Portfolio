@@ -14,7 +14,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="max-w-3xl mx-auto p-5 font-sans">
+    <div className=" mx-auto p-5 font-sans">
       <h3 className="text-[#FF014F] font-light mb-4 text-center text-lg lg:text-2xl">
         Skills
       </h3>
