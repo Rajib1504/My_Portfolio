@@ -9,7 +9,7 @@ import {
 
 const ContactSection = () => {
   return (
-    <div>
+    <div id="Contact">
       <h3 className="text-[#FF014F] font-light mt-4 mb-4 text-center text-lg lg:text-2xl">
         Contact
       </h3>
