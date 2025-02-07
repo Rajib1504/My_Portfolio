@@ -16,7 +16,10 @@ const ContactSection = () => {
     const name = form.name.value;
     const message = form.message.value;
     const details = { email, name, message };
-    await axios.post("http://localhost:9000/sendMails", details);
+    await axios.post(
+      "my-portfolio-server-ayhwumbbl-rajib1081s-projects.vercel.app/sendMails",
+      details
+    );
   };
 
   return (

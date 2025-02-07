@@ -7,7 +7,7 @@ const Projects = () => {
   const navigate = useNavigate();
   //   console.log(products);
   useEffect(() => {
-    fetch("http://localhost:9000/data")
+    fetch("my-portfolio-server-ayhwumbbl-rajib1081s-projects.vercel.app/data")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
