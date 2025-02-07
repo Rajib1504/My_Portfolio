@@ -1,13 +1,24 @@
+import axios from "axios";
 import {
   FaPhoneAlt,
   FaEnvelope,
   FaLinkedin,
   FaFacebook,
-  FaInstagram,
   FaLinkedinIn,
+  FaGithub,
 } from "react-icons/fa";
 
 const ContactSection = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const name = form.name.value;
+    const message = form.message.value;
+    const details = { email, name, message };
+    await axios.post("http://localhost:9000/sendMails", details);
+  };
+
   return (
     <div id="Contact">
       <h3 className="text-[#FF014F] font-light mt-4 mb-4 text-center text-lg lg:text-2xl">
@@ -53,7 +64,7 @@ const ContactSection = () => {
               <h3 className="text-xl font-medium mb-2">Social</h3>
               <div className="flex items-center gap-4">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/rajib-sardar-35307934a/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#FF014F] text-2xl hover:scale-110 transition-transform"
@@ -61,7 +72,7 @@ const ContactSection = () => {
                   <FaLinkedin />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/profile.php?id=100076870941377"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#FF014F] text-2xl hover:scale-110 transition-transform"
@@ -69,12 +80,12 @@ const ContactSection = () => {
                   <FaFacebook />
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/Rajib1504"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#FF014F] text-2xl hover:scale-110 transition-transform"
                 >
-                  <FaInstagram />
+                  <FaGithub />
                 </a>
               </div>
             </div>
@@ -82,7 +93,7 @@ const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="bg-white p-6 rounded-lg shadow-lg">
-            <form className="flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div>
                 <label
                   htmlFor="name"
@@ -93,6 +104,7 @@ const ContactSection = () => {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   placeholder="Enter your name"
                   className="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF014F]"
                 />
@@ -107,6 +119,7 @@ const ContactSection = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   placeholder="Enter your email"
                   className="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF014F]"
                 />
@@ -122,6 +135,7 @@ const ContactSection = () => {
                   id="message"
                   placeholder="Type your message..."
                   rows="4"
+                  name="message"
                   className="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF014F]"
                 ></textarea>
               </div>

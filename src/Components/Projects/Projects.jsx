@@ -5,14 +5,14 @@ import { useNavigate } from "react-router-dom";
 const Projects = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
-  console.log(products);
+  //   console.log(products);
   useEffect(() => {
     fetch("http://localhost:9000/data")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
   const handleSubmit = (id) => {
-    console.log(id);
+    //     console.log(id);
     navigate(`/details/${id}`);
   };
   return (

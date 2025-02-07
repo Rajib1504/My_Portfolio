@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 
 const Details = () => {
   const [project, setProject] = useState();
-  console.log(project);
+  //   console.log(project);
   const params = useParams();
-  console.log(params);
+  //   console.log(params);
   useEffect(() => {
     fetch(`http://localhost:9000/details/${params.id}`)
       .then((res) => res.json())
