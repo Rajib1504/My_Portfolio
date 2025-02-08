@@ -1,4 +1,6 @@
+import { Spinner } from "@material-tailwind/react";
 import axios from "axios";
+import { useState } from "react";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -9,17 +11,23 @@ import {
 } from "react-icons/fa";
 
 const ContactSection = () => {
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const name = form.name.value;
     const message = form.message.value;
     const details = { email, name, message };
-    await axios.post(
+    const data = await axios.post(
       "https://my-portfolio-server-five-iota.vercel.app/sendMails",
       details
     );
+
+    if (data) {
+      setLoading(false);
+    }
   };
 
   return (
@@ -142,12 +150,22 @@ const ContactSection = () => {
                   className="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF014F]"
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                className="w-full py-2 bg-gradient-to-r  from-[#FF014F] to-[#7e0529] text-white font-semibold rounded-lg hover:bg-[#893750] transition-colors"
-              >
-                Send
-              </button>
+
+              {loading ? (
+                <button
+                  type="submit"
+                  className="w-full py-2 bg-gradient-to-r flex justify-center items-center from-[#FF014F] to-[#7e0529] text-white font-semibold rounded-lg hover:bg-[#893750] transition-colors"
+                >
+                  <Spinner />
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  className="w-full py-2 bg-gradient-to-r  from-[#FF014F] to-[#7e0529] text-white font-semibold rounded-lg hover:bg-[#893750] transition-colors"
+                >
+                  Send
+                </button>
+              )}
             </form>
           </div>
         </div>
