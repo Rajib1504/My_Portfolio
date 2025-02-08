@@ -12,6 +12,11 @@ import { TiThMenu } from "react-icons/ti";
 
 const Nav = () => {
   const [openNav, setOpenNav] = useState(false);
+  const [isactive, setIsactive] = useState("");
+
+  const handleActive = (id) => {
+    setIsactive(id);
+  };
 
   useEffect(() => {
     window.addEventListener(
@@ -28,11 +33,23 @@ const Nav = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a
+          href="#"
+          onClick={() => handleActive("#")}
+          className={`flex items- hover:text-[#FF014F] ${
+            isactive === "#" && "text-[#FF014F]"
+          }`}
+        >
           About Me
         </a>
       </Typography>
-      <a href="#Skills" className="flex items-center">
+      <a
+        href="#Skills"
+        onClick={() => handleActive("#Skills")}
+        className={`flex items- hover:text-[#FF014F] ${
+          isactive === "#Skills" && "text-[#FF014F]"
+        }`}
+      >
         <Typography
           as="li"
           variant="small"
@@ -42,7 +59,13 @@ const Nav = () => {
           Skills
         </Typography>
       </a>
-      <a href="#Projects" className="flex items-center">
+      <a
+        href="#Projects"
+        onClick={() => handleActive("#Projects")}
+        className={`flex items- hover:text-[#FF014F] ${
+          isactive === "#Projects" && "text-[#FF014F]"
+        }`}
+      >
         <Typography
           as="li"
           variant="small"
@@ -52,7 +75,13 @@ const Nav = () => {
           Projects
         </Typography>
       </a>
-      <a href="#Contact" className="flex items-center">
+      <a
+        href="#Contact"
+        onClick={() => handleActive("#Contact")}
+        className={`flex items- hover:text-[#FF014F] ${
+          isactive === "#Contact" && "text-[#FF014F]"
+        }`}
+      >
         <Typography
           as="li"
           variant="small"
