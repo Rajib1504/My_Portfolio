@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { GoDownload } from "react-icons/go";
 import { RxCross1 } from "react-icons/rx";
 import { TiThMenu } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -98,12 +99,14 @@ const Nav = () => {
       <div>
         <Navbar className="sticky top-0  h-max max-w-full bg-[#ECF0F3] rounded-none px-4 py-2 lg:px-8 lg:py-4">
           <div className="flex items-center justify-between text-blue-gray-900">
-            <Typography
-              as="h2"
-              className="mr-4 text-2xl cursor-pointer py-1.5 text-black font-bold"
-            >
-              Rajib.s
-            </Typography>
+            <Link to={"/"}>
+              <Typography
+                as="h2"
+                className="mr-4 text-2xl cursor-pointer py-1.5 text-black font-bold"
+              >
+                Rajib.s
+              </Typography>
+            </Link>
             <div className="flex items-center gap-4">
               <div className="mr-4 hidden lg:block">{navList}</div>
               <div className="flex items-center gap-x-1">

@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { FaReact } from "react-icons/fa";
 import { FiFacebook, FiGithub } from "react-icons/fi";
 import { GoDownload } from "react-icons/go";
@@ -6,10 +9,18 @@ import { LuLinkedin } from "react-icons/lu";
 import { RiTailwindCssFill } from "react-icons/ri";
 
 const Banner = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
-    <div className="grid grid-cols-1  gap-6 lg:gap-4  lg:grid-cols-2 items-center  mx-auto py-10">
+    <div className="grid grid-cols-1 gap-6 lg:gap-4 lg:grid-cols-2 items-center mx-auto py-10 overflow-hidden">
       {/* Text Container */}
-      <div className="space-y-6 order-1">
+      <div className="space-y-6 order-1" data-aos="fade-right">
         <p className="text-sm lg:text-base uppercase text-gray-500 tracking-widest">
           Welcome to my world
         </p>
@@ -33,92 +44,101 @@ const Banner = () => {
         </div>
         {/* Description */}
         <p className="text-gray-600 leading-relaxed">
-          I am a passionate and detail-oriented Junior Frontend Developer and
-          Web Developer, dedicated to crafting visually appealing and
-          user-friendly websites. With a strong foundation in modern web
-          technologies, I am creating responsive and dynamic interfaces that
-          deliver seamless user experiences. While my primary focus lies in
-          frontend development, I am also expanding my expertise to backend
-          technologies, making me a budding Junior Full Stack Developer...
+          I am a passionate and detail-oriented Junior Frontend Developer...
         </p>
-        {/* button  */}
+        {/* Resume Button */}
         <a
-          href="https://drive.google.com/file/d/18RD2vhh9kqUcuAHPAM8o8BNpGYWBoADd/view?usp=sharing"
+          href="https://i.ibb.co/cKMqsHPK/my-image-1-1-11zon.png"
           target="_blank"
-          className="border border-[#FF014F] flex gap-3 rounded-lg py-2 max-w-fit px-3"
+          className="border border-[#FF014F] w-fit flex gap-3 rounded-lg py-2 px-3 hover:bg-[#FF014F] hover:text-white transition-all duration-300 ease-in-out"
         >
           <span className="font-bold">Resume</span>
-          <GoDownload className="text-2xl"></GoDownload>
+          <GoDownload className="text-2xl" />
         </a>
-        {/* connect section  */}
+
+        {/* Connect Section */}
         <div className="lg:mt-32 md:mt-20 mt-16 flex justify-between items-center flex-wrap">
-          {/* 1st container  */}
+          {/* Social Links */}
           <div>
             <p className="text-sm lg:text-base uppercase mb-4 text-gray-500 tracking-widest">
               Let&apos;s Connect on
             </p>
             <div className="flex gap-3 justify-center items-center flex-wrap">
-              {/* facebook  */}
-              <a
-                href="https://www.facebook.com/profile.php?id=100076870941377"
-                target="_blank"
-                className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 hover:scale-105 hover:origin-bottom text-gray-600 hover:text-white hover:ease-out hover:duration-200 rounded-sm bg-gradient-to-br from-gray-300 to-[#ffffff] hover:bg-gradient-to-b hover:from-[#FF014F] hover:to-[#92002c] shadow-[-8px_-8px_14px_0_white] flex justify-center items-center transition-all"
-              >
-                <FiFacebook className="text-lg sm:text-xl md:text-2xl" />
-              </a>
-              {/* linkdin  */}
-              <a
-                href="https://www.linkedin.com/in/rajib-sardar-35307934a"
-                target="_blank"
-                className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 hover:scale-105 hover:origin-bottom text-gray-600 hover:text-white hover:ease-out hover:duration-200 rounded-sm bg-gradient-to-br from-gray-300 to-[#ffffff] hover:bg-gradient-to-b hover:from-[#FF014F] hover:to-[#92002c] shadow-[-8px_-8px_14px_0_white] flex justify-center items-center transition-all"
-              >
-                <LuLinkedin className="text-lg sm:text-xl md:text-2xl" />
-              </a>
-              {/* github  */}
-              <a
-                href="https://github.com/Rajib1504"
-                target="_blank"
-                className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 hover:scale-105 hover:origin-bottom text-gray-600 hover:text-white hover:ease-out hover:duration-200 rounded-sm bg-gradient-to-br from-gray-300 to-[#ffffff] hover:bg-gradient-to-b hover:from-[#FF014F] hover:to-[#92002c] shadow-[-8px_-8px_14px_0_white] flex justify-center items-center transition-all"
-              >
-                <FiGithub className="text-lg sm:text-xl md:text-2xl" />
-              </a>
+              {[
+                {
+                  icon: FiFacebook,
+                  link: "https://www.facebook.com/profile.php?id=100076870941377",
+                },
+                {
+                  icon: LuLinkedin,
+                  link: "https://www.linkedin.com/in/rajib-sardar-35307934a",
+                },
+                { icon: FiGithub, link: "https://github.com/Rajib1504" },
+              ].map(({ icon: Icon, link }, index) => (
+                <a
+                  key={index}
+                  href={link}
+                  target="_blank"
+                  className="w-12 h-12 md:w-16 md:h-16 text-gray-600 hover:text-white rounded-md bg-gray-200 hover:bg-[#FF014F] flex justify-center items-center shadow-md transform hover:scale-110 transition-all duration-300"
+                  data-aos="zoom-in"
+                >
+                  <Icon className="text-xl md:text-2xl" />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* 2nd container  */}
+          {/* Skills Section */}
           <div>
             <p className="text-sm lg:text-base uppercase mb-4 text-gray-500 tracking-widest">
               Best skill on
             </p>
-            {/* boxes  */}
-
             <div className="flex gap-3 justify-center items-center flex-wrap">
-              {/* tailwind  */}
-              <button className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16  text-gray-600  rounded-sm bg-gradient-to-br from-gray-300 to-[#ffffff] shadow-[-8px_-8px_14px_0_white] flex justify-center items-center transition-all">
-                <RiTailwindCssFill className="text-lg text-sky-600 sm:text-xl md:text-2xl" />
-              </button>
-              {/* javascript  */}
-              <button className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16  text-gray-600  rounded-sm bg-gradient-to-br from-gray-300 to-[#ffffff] shadow-[-8px_-8px_14px_0_white] flex justify-center items-center transition-all">
-                <IoLogoJavascript className="text-lg text-yellow-500 sm:text-xl md:text-2xl" />
-              </button>
-              {/* react  */}
-              <button className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16  text-gray-600  rounded-sm bg-gradient-to-br from-gray-300 to-[#ffffff] shadow-[-8px_-8px_14px_0_white] flex justify-center items-center transition-all">
-                <FaReact className="text-lg text-[#FF014F] sm:text-xl md:text-2xl" />
-              </button>
+              {[RiTailwindCssFill, IoLogoJavascript, FaReact].map(
+                (Icon, index) => (
+                  <button
+                    key={index}
+                    className="w-12 h-12 md:w-16 md:h-16 text-gray-600 rounded-md bg-gray-200 flex justify-center items-center shadow-md transition-all hover:scale-110"
+                    data-aos="flip-left"
+                  >
+                    <Icon className="text-xl md:text-2xl text-[#FF014F]" />
+                  </button>
+                )
+              )}
             </div>
           </div>
         </div>
       </div>
-      {/* Image Container */}
-      <div className="flex justify-center w-full lg:order-1 items-center rounded-lg relative">
-        <div className="relative ">
+
+      {/* Image Container with Floating Animation */}
+      <div className="flex justify-center w-full lg:order-1 items-center rounded-lg relative overflow-hidden">
+        <div className="relative">
           <img
             src="https://i.ibb.co/rKChCcDw/my-image-1-1.png"
             alt="Rajib Sardar"
-            className=" lg:w-full h-screen md:pl-12 p-2 object-cover rounded-lg shadow-lg"
+            className="lg:w-full h-auto md:pl-12 p-2 object-cover rounded-lg shadow-lg floating"
           />
         </div>
       </div>
+
+      {/* Floating Image Animation */}
+      <style>{`
+        .floating {
+          animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+      `}</style>
     </div>
   );
 };
