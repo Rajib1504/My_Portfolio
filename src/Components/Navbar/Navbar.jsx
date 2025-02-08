@@ -34,6 +34,22 @@ const Nav = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
+        <Link
+          to={"/"}
+          onClick={() => handleActive("home")}
+          className={`flex items- hover:text-[#FF014F] ${
+            isactive === "home" && "text-[#FF014F]"
+          }`}
+        >
+          Home
+        </Link>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
         <a
           href="#"
           onClick={() => handleActive("#")}
