@@ -48,7 +48,7 @@ const Banner = () => {
         </p>
         {/* Resume Button */}
         <a
-          href="https://i.ibb.co/cKMqsHPK/my-image-1-1-11zon.png"
+          href="https://drive.google.com/file/d/1RBGasD2Z3-YYTVS0JDUulcv0J8TQkWlv/view?usp=sharing"
           target="_blank"
           className="border border-[#FF014F] w-fit flex gap-3 rounded-lg py-2 px-3 hover:bg-[#FF014F] hover:text-white transition-all duration-300 ease-in-out"
         >

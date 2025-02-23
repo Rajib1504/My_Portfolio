@@ -131,7 +131,7 @@ const Nav = () => {
                   className="hidden lg:inline-block border shadow-[#a6a6a6a1] shadow-lg border-gray-200 bg-[#f7f7f7]"
                 >
                   <a
-                    href="https://drive.google.com/file/d/18RD2vhh9kqUcuAHPAM8o8BNpGYWBoADd/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1RBGasD2Z3-YYTVS0JDUulcv0J8TQkWlv/view?usp=sharing"
                     target="_blank"
                     className="flex justify-center gap-3 text-[#FF014F] items-center"
                   >
